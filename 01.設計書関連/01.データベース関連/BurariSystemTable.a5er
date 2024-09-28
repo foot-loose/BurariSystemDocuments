@@ -1,0 +1,307 @@
+﻿# A5:ER FORMAT:17
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright © 2007 m.matsubara
+# A5:SQL Mk-2 Version 2.18.4 Copyright © 1997 - 2023 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=WalkingRallySystem
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A2Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=12
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=6
+RDBMSTypeName=MySQL
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+UpperCaseKeyword=0
+ShowTag=1
+ShowCommonAttributes=0
+BugFixEntityWidth=0
+
+[Entity]
+PName=m_clients
+LName=クライアントマスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=1000
+Top=150
+Field="クライアントUID","client_uid","VARCHAR(128)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="クライアントアカウント","client_account","VARCHAR(32)","NOT NULL",,"","",$FFFFFFFF,""
+Field="クライアントパスワード","client_password","VARCHAR(256)","NOT NULL",,"","",$FFFFFFFF,""
+Field="クライアント名","client_name","VARCHAR(32)","NOT NULL",,"","",$FFFFFFFF,""
+Field="メールアドレス","client_email","VARCHAR(1024)",,,"","",$FFFFFFFF,""
+Field="居住地ID","residence_id","INT(11)",,,"","",$FFFFFFFF,""
+Field="郵便番号","zip_code","VARCHAR(10)",,,"","",$FFFFFFFF,""
+Field="住所","address","VARCHAR(1024)",,,"","",$FFFFFFFF,""
+Field="電話番号","tel","VARCHAR(15)",,,"","",$FFFFFFFF,""
+Field="携帯電話番号","mobile","VARCHAR(15)",,,"","",$FFFFFFFF,""
+Field="失敗カウント","mistake","INT",,,"0","",$FFFFFFFF,""
+Field="アクティブフラグ","is_active","INT(1)",,,"1","0=非アクティブ、1=アクティブ",$FFFFFFFF,""
+Field="削除フラグ","is_delete","INT(1)","NOT NULL",,"0","0=非削除、1=削除",$FFFFFFFF,""
+Field="ログイン日時","login_date","DATETIME",,,"","",$FFFFFFFF,""
+Field="作成日時","create_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","update_date","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240926145352
+Position="MAIN",1000,150,725,960
+ZOrder=-1
+
+[Entity]
+PName=t_user
+LName=ユーザデータ
+Comment=
+TableOption=
+Page=MAIN
+Left=1150
+Top=1850
+Field="ユーザUID","user_uid","VARCHAR(128)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="モバイル名","mobile_name","VARCHAR(64)",,,"","",$FFFFFFFF,""
+Field="OSタイプ","os_type","VARCHAR(64)",,,"","",$FFFFFFFF,""
+Field="OSバージョン","os_version","VARCHAR(64)",,,"","",$FFFFFFFF,""
+Field="アクセストークン","access_token","VARCHAR(128)",,,"","",$FFFFFFFF,""
+Field="旧アクセストークン","old_access_token","VARCHAR(128)",,,"","",$FFFFFFFF,""
+Field="アクセストークン期限切れ日時","access_token_deadline","DATETIME",,,"","",$FFFFFFFF,""
+Field="リフレッシュトークン","refresh_token","VARCHAR(128)",,,"","",$FFFFFFFF,""
+Field="リフレッシュトークン期限切れ日時","refresh_token_deadline","DATETIME",,,"","",$FFFFFFFF,""
+Field="削除フラグ","is_delete","INT(1)","NOT NULL",,"0","0=非削除、1=削除",$FFFFFFFF,""
+Field="アクセス日時","access_date","DATETIME",,,"","アプリの最終起動日時",$FFFFFFFF,""
+Field="作成日時","create_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","update_date","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240926154413
+Position="MAIN",1150,1850,720,733
+ZOrder=-2
+
+[Entity]
+PName=m_admin
+LName=管理者マスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=100
+Top=400
+Field="管理者UID","admin_uid","VARCHAR(128)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="管理者名","name","VARCHAR(32)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ログインアカウント","account","VARCHAR(32)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ログインパスワード","password","VARCHAR(256)","NOT NULL",,"","",$FFFFFFFF,""
+Field="権限","authority","INT(1)","NOT NULL",,"","1=業者（店舗）\n9=管理者 ",$FFFFFFFF,""
+Field="アクティブフラグ","is_active","INT(1)",,,"1","",$FFFFFFFF,""
+Field="失敗カウント","mistake","INT",,,"0","",$FFFFFFFF,""
+Field="削除フラグ","is_delete","INT(1)","NOT NULL",,"0","0=非削除、1=削除",$FFFFFFFF,""
+Field="ログイン日時","login_date","DATETIME",,,"","",$FFFFFFFF,""
+Field="作成日時","create_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","update_date","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240206151003
+Position="MAIN",100,400,529,595
+ZOrder=-3
+
+[Entity]
+PName=t_events
+LName=イベントデータ
+Comment=
+TableOption=
+Page=MAIN
+Left=2150
+Top=100
+Field="イベントUID","event_uid","VARCHAR(128)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="クライアントUID","client_uid","VARCHAR(128)",,,"","",$FFFFFFFF,""
+Field="ラリークリアポイント","rally_clear_point_num","INT","NOT NULL",,"","クリア取得数",$FFFFFFFF,""
+Field="イベントタイトル","event_title","VARCHAR(64)","NOT NULL",,"","",$FFFFFFFF,""
+Field="イベント紹介","event_description","VARCHAR(2048)","NOT NULL",,"","",$FFFFFFFF,""
+Field="イベントQRイメージPATH","event_qrcode_img_path","VARCHAR(1024)","NOT NULL",,"","",$FFFFFFFF,""
+Field="イベント画像URL","event_img_path","VARCHAR(1024)",,,"","",$FFFFFFFF,""
+Field="イベント画像名","event_img_name","VARCHAR(256)",,,"","",$FFFFFFFF,""
+Field="イベント画像オリジナル名","event_img_original_name","VARCHAR(256)",,,"","",$FFFFFFFF,""
+Field="イベント開始日時","event_start_date","DATETIME",,,"","",$FFFFFFFF,""
+Field="イベント終了日時","event_end_date","DATETIME",,,"","",$FFFFFFFF,""
+Field="イベントURL","event_url","VARCHAR(1024)",,,"","",$FFFFFFFF,""
+Field="応募URL","application_url","VARCHAR(1024)",,,"","",$FFFFFFFF,""
+Field="イベントアクセスユーザ数","event_access_count","INT(10)","NOT NULL",,"0","イベントを読み込んだユーザの総数",$FFFFFFFF,""
+Field="イベントクリアカウント","event_clear_count","INT","NOT NULL",,"0","イベントクリアチェックイン数",$FFFFFFFF,""
+Field="イベントモード","event_mode","INT(1)","NOT NULL",,"0","0=室外（GPS使用）、1=室内（QRコード使用）",$FFFFFFFF,""
+Field="公開フラグ","release_flag","INT(1)","NOT NULL",,"0","0=非公開、1=公開",$FFFFFFFF,""
+Field="イベント終了フラグ","event_end_flag","INT(1)","NOT NULL",,"0","0=通常、1=イベント終了",$FFFFFFFF,""
+Field="削除フラグ","is_delete","INT(1)","NOT NULL",,"0","0=非削除、1=削除",$FFFFFFFF,""
+Field="作成日時","create_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","update_date","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240926154643
+Position="MAIN",2150,100,730,1074
+ZOrder=-4
+
+[Entity]
+PName=t_spots
+LName=スポット
+Comment=
+TableOption=
+Page=MAIN
+Left=4000
+Top=100
+Field="スポットUID","spot_uid","VARCHAR(128)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="イベントUID","event_uid","VARCHAR(128)",,,"","",$FFFFFFFF,""
+Field="巡りNo","around_no","INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="タイトル","spot_title","VARCHAR(32)","NOT NULL",,"","",$FFFFFFFF,""
+Field="説明","spot_description","VARCHAR(2048)","NOT NULL",,"","",$FFFFFFFF,""
+Field="画像PATH","spot_img_path","VARCHAR(1024)","NOT NULL",,"","",$FFFFFFFF,""
+Field="画像名","spot_img_name","VARCHAR(256)","NOT NULL",,"","",$FFFFFFFF,""
+Field="画像オリジナル名","spot_img_original_name","VARCHAR(256)","NOT NULL",,"","",$FFFFFFFF,""
+Field="スポットQRイメージPATH","spot_qr_image_path","VARCHAR(1024)",,,"","",$FFFFFFFF,""
+Field="スポットURL","spot_url","VARCHAR(1024)",,,"","",$FFFFFFFF,""
+Field="緯度","latitude","DOUBLE","NOT NULL",,"","",$FFFFFFFF,""
+Field="経度","longitude","DOUBLE","NOT NULL",,"","",$FFFFFFFF,""
+Field="範囲","scope","INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="チェックインタイプ","check_in_mode","INT(1)","NOT NULL",,"0","0=無し、1=メッセージ、2=クイズ",$FFFFFFFF,""
+Field="クイズ問題文","spot_question","VARCHAR(2048)",,,"","",$FFFFFFFF,""
+Field="クイズ答え","answer","VARCHAR(64)",,,"","",$FFFFFFFF,""
+Field="ユーザチェックイン数","user_checkin_count","INT(10)","NOT NULL",,"0","ユーザがチェックインした総数",$FFFFFFFF,""
+Field="削除フラグ","is_delete","INT(1)","NOT NULL",,"0","0=非削除、1=削除",$FFFFFFFF,""
+Field="作成日時","create_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","update_date","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240926154706
+Position="MAIN",4000,100,839,1429
+ZOrder=-5
+
+[Entity]
+PName=t_event_link
+LName=イベントリンクデータ
+Comment=
+TableOption=
+Page=MAIN
+Left=2950
+Top=1600
+Field="イベントリンクUID","event_link_uid","VARCHAR(128)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="イベントUID","event_uid","VARCHAR(128)",,,"","",$FFFFFFFF,""
+Field="ユーザUID","user_uid","VARCHAR(128)",,,"","",$FFFFFFFF,""
+Field="ラリークリア情報","rally_clear_info","VARCHAR(2048)",,,"","JSON形式で管理",$FFFFFFFF,""
+Field="イベント完了フラグ","event_end_flag","INT(1)","NOT NULL",,"0","0=イベント未完了\n1=イベント完了",$FFFFFFFF,""
+Field="削除フラグ","is_delete","INT(1)","NOT NULL",,"0","0=非削除、1=削除",$FFFFFFFF,""
+Field="作成日時","create_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日時","update_date","DATETIME",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20240205152916
+Position="MAIN",2950,1600,831,754
+ZOrder=-6
+
+[Relation]
+Entity1=m_clients
+Entity2=t_events
+RelationType1=1
+RelationType2=3
+Fields1=client_uid
+Fields2=client_uid
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,1417,8583,1732,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20240109213829
+LineMode=0
+Bar1=142
+Bar2=858
+Bar3=173
+TermPos1=R
+TermPos2=R
+ZOrder=-7
+
+[Relation]
+Entity1=t_events
+Entity2=t_spots
+RelationType1=1
+RelationType2=3
+Fields1=event_uid
+Fields2=event_uid
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,6119,5057,5855,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20240109213914
+LineMode=0
+Bar1=612
+Bar2=506
+Bar3=586
+TermPos1=R
+TermPos2=R
+ZOrder=-8
+
+[Relation]
+Entity1=t_user
+Entity2=t_event_link
+RelationType1=1
+RelationType2=3
+Fields1=user_uid
+Fields2=user_uid
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,4441,5559,4959,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20240109214835
+LineMode=0
+Bar1=444
+Bar2=556
+Bar3=496
+TermPos1=R
+TermPos2=R
+ZOrder=-9
+
+[Relation]
+Entity1=t_event_link
+Entity2=t_events
+RelationType1=1
+RelationType2=1
+Fields1=event_uid
+Fields2=event_uid
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,1816,5500,8983,R,R,""
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20240109215237
+LineMode=0
+Bar1=182
+Bar2=550
+Bar3=898
+TermPos1=R
+TermPos2=R
+ZOrder=-10
