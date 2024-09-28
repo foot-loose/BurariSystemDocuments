@@ -1,2 +1,2 @@
 # BurariSystemDocuments
-むらり設計書関連
+ぶらり設計書関連
